@@ -1,0 +1,1 @@
+{"modulePrefix":"client","environment":"development","rootURL":"/","locationType":"auto","EmberENV":{"FEATURES":{},"EXTEND_PROTOTYPES":{"Date":false}},"APP":{"name":"client","version":"0.0.0+c8456a7e"},"apiHost":"http://localhost:8000/api","exportApplicationGlobal":true}

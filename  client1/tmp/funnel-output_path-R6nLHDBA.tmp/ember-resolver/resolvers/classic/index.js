@@ -1,0 +1,1 @@
+/Users/davidsabag/Desktop/TODOLIST/client/tmp/funnel-input_base_path-SDUm7qc5.tmp/resolvers/classic/index.js
