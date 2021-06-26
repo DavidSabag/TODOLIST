@@ -1,0 +1,1 @@
+Ember.libraries.register('Ember Simple Auth', '3.1.0');

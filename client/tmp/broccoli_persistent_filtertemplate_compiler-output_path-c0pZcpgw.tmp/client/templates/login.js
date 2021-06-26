@@ -1,0 +1,1 @@
+export default Ember.HTMLBars.template({"id":"yh8zzRd1","block":"{\"symbols\":[],\"statements\":[[1,[18,\"login-form\"],false]],\"hasEval\":false}","meta":{"moduleName":"client/templates/login.hbs"}});

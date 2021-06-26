@@ -1,0 +1,72 @@
+ 
+ <button onclick={{action 'logOut'}} class="btn btn-link more">Sign out</button>
+ 
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-6">
+            <div class="p-4 bg-white notes">
+                <div class="d-flex flex-row align-items-center notes-title between">
+                    <h4>My Todos</h4>
+                    <h4 onclick={{action 'addTodo'}} class="bi bi-plus-circle"></h4>
+                </div>
+                
+            </div>
+            <div class="p-3 bg-white">
+                {{#each this.tasks as |task|}}
+                    <div class="d-flex align-items-center between">                      
+                        
+                            <input checked={{task.is_done}} type="checkbox" onchange={{action 'toggleTask' }} class="option-input radio">
+                            <span  class={{if task.is_done 'done'}}>{{task.todo}}</span>
+                            <div class="todo-icons">
+                                <h4  value={{task.todo}} is_done={{task.is_done}} onclick={{action 'onShare'}} class={{if task.is_shared 'bi bi-share-fill' 'bi bi-share'}} ></h4>
+                                <h4  value={{task.todo}} onclick={{action 'removeTask'}} class="bi bi-x-lg"></h4>
+                            </div>                
+                    
+                    </div>
+                {{/each}}
+                
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+
+
+<div  class="modal">
+    <div class="modal-content">
+        <span class="close" onclick={{action 'onAddModalClose'}}>&times;</span>
+            <div class="input-group mb-3">
+                <input id="add-task-input" type="text" class="form-control" value={{this.task}} placeholder="Describe your task here" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" onclick={{action 'addTask'}}  type="submit">Add Task</button>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class="share-lst">
+    
+    <div class="modal-content">
+        
+        <span class="close" onclick={{action 'onShareModalClose'}}>&times;</span>
+            <h5 align="center" >Share task with</h5>
+            {{#each this.users as |user|}}
+                <div class="input-group mb-3">
+                    <input value={{user.email}} checked={{user.is_shared}} onclick={{action 'shareTask'}} type="checkbox" class="option-input radio"> 
+                    <label id="share-user">{{user.email}}</label>      
+                </div>
+            {{/each}}
+            
+    </div>
+</div>
+
+<footer class="footer">
+      <div class="containr">
+        <h4>Complited - {{this.complited}}</h4> 
+        <h4>Uncomplited - {{this.uncomplited}}</h4>
+        <h4>Total - {{this.total}}</h4>
+        
+      </div>
+</footer>
