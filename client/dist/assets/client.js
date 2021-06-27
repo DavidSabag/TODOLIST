@@ -57,7 +57,6 @@ define('client/authenticators/token', ['exports', 'ember-simple-auth/authenticat
     }
 
     exports.default = _base.default.extend({
-        restore: function restore(data) {},
         authenticate: function () {
             var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(email, password) {
                 var res, err;
@@ -108,8 +107,7 @@ define('client/authenticators/token', ['exports', 'ember-simple-auth/authenticat
             }
 
             return authenticate;
-        }(),
-        invalidate: function invalidate(data) {}
+        }()
     });
 });
 define('client/components/add-todo', ['exports'], function (exports) {
@@ -1069,6 +1067,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("client/app")["default"].create({"name":"client","version":"0.0.0+d90a9c90"});
+  require("client/app")["default"].create({"name":"client","version":"0.0.0+d2471640"});
 }
 //# sourceMappingURL=client.map

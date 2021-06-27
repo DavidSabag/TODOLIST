@@ -3,9 +3,7 @@ import Base from 'ember-simple-auth/authenticators/base';
 import config from '../config/environment';
 
 export default Base.extend({
-    restore(data){
 
-    },
     async authenticate(email, password){
         
         const res = await fetch(`${config.apiHost}/login`,{
@@ -25,10 +23,6 @@ export default Base.extend({
             throw new Error(err.error)
         }
     },
-    invalidate(data){
-
-    }
-
 
 
 })
